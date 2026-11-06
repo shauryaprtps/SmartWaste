@@ -8,11 +8,11 @@ int main()
 
     initializeHeap(&heap);
 
-    Bin b1 = {"B101", 45};
-    Bin b2 = {"B102", 95};
-    Bin b3 = {"B103", 80};
-    Bin b4 = {"B104", 30};
-    Bin b5 = {"B105", 99};
+    HeapBin b1 = {"B101", 45};
+    HeapBin b2 = {"B102", 95};
+    HeapBin b3 = {"B103", 80};
+    HeapBin b4 = {"B104", 30};
+    HeapBin b5 = {"B105", 99};
 
     insertBin(&heap, b1);
     insertBin(&heap, b2);
@@ -26,9 +26,9 @@ int main()
 
     while (!isEmpty(&heap))
     {
-        Bin selected = extractMax(&heap);
+        HeapBin selected = extractMax(&heap);
 
-        printf("Collect Bin: %s | Fill: %.2f%%\n",
+        printf("Collect HeapBin: %s | Fill: %.2f%%\n",
                selected.binID,
                selected.fillPercentage);
     }

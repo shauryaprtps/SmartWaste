@@ -12,7 +12,7 @@ int isEmpty(MaxHeap *heap)
     return heap->size == 0;
 }
 
-void insertBin(MaxHeap *heap, Bin bin)
+void insertBin(MaxHeap *heap, HeapBin bin)
 {
     if (heap->size >= MAX_BINS)
     {
@@ -33,7 +33,7 @@ void insertBin(MaxHeap *heap, Bin bin)
         if (heap->bins[i].fillPercentage >
             heap->bins[parent].fillPercentage)
         {
-            Bin temp = heap->bins[i];
+            HeapBin temp = heap->bins[i];
             heap->bins[i] = heap->bins[parent];
             heap->bins[parent] = temp;
 
@@ -69,7 +69,7 @@ void heapifyDown(MaxHeap *heap, int i)
 
     if (largest != i)
     {
-        Bin temp = heap->bins[i];
+        HeapBin temp = heap->bins[i];
         heap->bins[i] = heap->bins[largest];
         heap->bins[largest] = temp;
 
@@ -77,9 +77,9 @@ void heapifyDown(MaxHeap *heap, int i)
     }
 }
 
-Bin extractMax(MaxHeap *heap)
+HeapBin extractMax(MaxHeap *heap)
 {
-    Bin emptyBin = {"NONE", 0};
+    HeapBin emptyBin = {"NONE", 0};
 
     if (isEmpty(heap))
     {
@@ -87,7 +87,7 @@ Bin extractMax(MaxHeap *heap)
         return emptyBin;
     }
 
-    Bin highest = heap->bins[0];
+    HeapBin highest = heap->bins[0];
 
     heap->bins[0] = heap->bins[heap->size - 1];
     heap->size--;
@@ -108,7 +108,7 @@ void displayHeap(MaxHeap *heap)
         return;
     }
 
-    printf("\nCurrent Bin Priority:\n");
+    printf("\nCurrent HeapBin Priority:\n");
 
     for (int i = 0; i < heap->size; i++)
     {

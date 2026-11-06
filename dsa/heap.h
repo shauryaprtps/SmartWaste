@@ -8,20 +8,20 @@ typedef struct
     char binID[10];
     float fillPercentage;
 
-} Bin;
+} HeapBin;
 
 typedef struct
 {
-    Bin bins[MAX_BINS];
+    HeapBin bins[MAX_BINS];
     int size;
 
 } MaxHeap;
 
 void initializeHeap(MaxHeap *heap);
 
-void insertBin(MaxHeap *heap, Bin bin);
+void insertBin(MaxHeap *heap, HeapBin bin);
 
-Bin extractMax(MaxHeap *heap);
+HeapBin extractMax(MaxHeap *heap);
 
 void displayHeap(MaxHeap *heap);
 
