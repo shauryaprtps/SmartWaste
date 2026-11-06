@@ -4,3 +4,4 @@ graph_test
 dijkstra_test
 database_test
 smartwaste
+database/*.db
