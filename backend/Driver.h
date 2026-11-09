@@ -32,6 +32,10 @@ public:
     {
         return driverName;
     }
+    string getPhoneNumber()
+    {
+    return phoneNumber;
+    }
 
     string getTruckID()
     {

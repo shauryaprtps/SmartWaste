@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Complaints | SmartWaste</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script src="profile.js"></script>
+<body>
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">♻</div>
+            <div>
+                <h2>SmartWaste</h2>
+               <span>CITIZEN PORTAL</span>
+            </div>
+        </div>
+
+        <div class="nav-heading">CITIZEN WORKSPACE</div>
+
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">
+                <span>⌂</span> Dashboard
+            </a>
+
+            <a href="complaint.html" class="nav-link">
+                <span>✎</span> Submit Complaint
+            </a>
+
+            <a href="status.html" class="nav-link active">
+                <span>▤</span> My Complaints
+            </a>
+        </nav>
+
+       <div class="sidebar-bottom">
+    <div class="admin-avatar" id="citizenInitial">C</div>
+    <div>
+        <strong id="citizenDisplayName">Citizen</strong>
+        <small id="citizenDisplayRole">Community Member</small>
+    </div>
+</div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="page-header">
+            <div>
+                <h1>My Complaints</h1>
+                <p>Track the status of your submitted complaints.</p>
+            </div>
+        </header>
+
+        <section class="welcome-banner">
+            <div>
+                <h2>Complaint Tracking</h2>
+                <p>
+                    Enter your registered mobile number to view
+                    your complaint history and current status.
+                </p>
+            </div>
+            <div class="welcome-icon">📋</div>
+        </section>
+
+        <section class="content-card">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Find Your Complaints</h2>
+                    <p>Use the same mobile number you used while submitting.</p>
+                </div>
+            </div>
+
+            <form id="searchComplaintForm">
+                <div class="form-group">
+                    <label for="searchPhone">Mobile Number</label>
+                    <input
+                        type="tel"
+                        id="searchPhone"
+                        placeholder="Enter your 10-digit mobile number"
+                        pattern="[0-9]{10}"
+                        maxlength="10"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="primary-btn">
+                    Search Complaints
+                </button>
+            </form>
+
+            <div id="statusMessage" class="message"></div>
+
+        </section>
+
+        <section class="content-card">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Complaint History</h2>
+                    <p>Your submitted complaints will appear here.</p>
+                </div>
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="refreshComplaintsBtn"
+                >
+                    Refresh
+                </button>
+            </div>
+
+            <div id="complaintResults">
+                <div class="empty-state">
+                    Search using your mobile number to view complaints.
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="status.js"></script>
+
+</body>
+</html>

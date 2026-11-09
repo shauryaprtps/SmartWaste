@@ -33,19 +33,24 @@ public:
     }
 
     string getLocation()
-    {
-        return locationName;
-    }
+{
+    return locationName;
+}
 
-    int getLocationNode()
-    {
-        return locationNode;
-    }
+int getLocationNode()
+{
+    return locationNode;
+}
 
-    float getFillPercentage()
-    {
-        return fillPercentage;
-    }
+float getMaxCapacityKg()
+{
+    return maxCapacityKg;
+}
+
+float getFillPercentage()
+{
+    return fillPercentage;
+}
 
     float getEstimatedGarbage()
     {

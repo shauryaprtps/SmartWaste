@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Complaint | SmartWaste</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script src="profile.js"></script>
+<body>
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">♻</div>
+            <div>
+                <h2>SmartWaste</h2>
+                <span>CITIZEN PORTAL</span>
+            </div>
+        </div>
+
+        <div class="nav-heading">CITIZEN WORKSPACE</div>
+
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">
+                <span>⌂</span> Dashboard
+            </a>
+
+            <a href="complaint.html" class="nav-link active">
+                <span>✎</span> Submit Complaint
+            </a>
+
+            <a href="status.html" class="nav-link">
+                <span>▤</span> My Complaints
+            </a>
+        </nav>
+
+     <div class="sidebar-bottom">
+    <div class="admin-avatar" id="citizenInitial">C</div>
+    <div>
+        <strong id="citizenDisplayName">Citizen</strong>
+        <small id="citizenDisplayRole">Community Member</small>
+    </div>
+</div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="page-header">
+            <div>
+                <h1>Submit a Complaint</h1>
+                <p>Report waste management problems in your area.</p>
+            </div>
+        </header>
+
+        <section class="welcome-banner">
+            <div>
+                <h2>Help Keep Your City Clean!</h2>
+                <p>
+                    Report overflowing bins and garbage collection
+                    problems. Your feedback helps improve waste management.
+                </p>
+            </div>
+            <div class="welcome-icon">🌱</div>
+        </section>
+
+        <section class="content-card">
+            <div class="section-heading">
+                <div>
+                    <h2>Complaint Details</h2>
+                    <p>Enter the details below to submit your complaint.</p>
+                </div>
+            </div>
+
+            <div id="complaintMessage" class="message"></div>
+
+            <form id="complaintForm">
+
+                <div class="form-group">
+                    <label for="citizenName">Full Name *</label>
+                    <input
+                        type="text"
+                        id="citizenName"
+                        placeholder="Enter your full name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="citizenPhone">Mobile Number *</label>
+                    <input
+                        type="tel"
+                        id="citizenPhone"
+                        placeholder="Enter your 10-digit mobile number"
+                        pattern="[0-9]{10}"
+                        maxlength="10"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="binId">Bin ID *</label>
+                    <input
+                        type="text"
+                        id="binId"
+                        placeholder="Example: B101"
+                        required
+                    >
+                    <small style="color: #6b7280;">
+                        Enter the bin number shown on the dustbin.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="issueType">Issue Type *</label>
+                    <select id="issueType" required>
+                        <option value="">Select an issue</option>
+                        <option value="Overflowing Bin">Overflowing Bin</option>
+                        <option value="Missed Garbage Collection">Missed Garbage Collection</option>
+                        <option value="Bad Smell">Bad Smell</option>
+                        <option value="Damaged Bin">Damaged Bin</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Complaint Description *</label>
+                    <textarea
+                        id="description"
+                        placeholder="Describe the problem and its location..."
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="primary-btn">
+                    Submit Complaint
+                </button>
+
+            </form>
+        </section>
+
+    </main>
+
+    <script src="complaint.js"></script>
+
+</body>
+</html>

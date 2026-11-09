@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartWaste | Select Portal</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7f5;
+            color: #20382d;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            height: 76px;
+            padding: 0 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #123d30;
+            color: white;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-icon {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 11px;
+            background: #1eaa65;
+            font-size: 25px;
+        }
+
+        .brand h2 {
+            font-size: 19px;
+        }
+
+        .brand p {
+            font-size: 10px;
+            margin-top: 3px;
+            color: #b6d3c4;
+            letter-spacing: 1px;
+        }
+
+        .navbar-label {
+            font-size: 12px;
+            color: #c4d7cc;
+        }
+
+        .main {
+            max-width: 1120px;
+            margin: 65px auto;
+            padding: 0 25px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 42px;
+        }
+
+        .eyebrow {
+            color: #267650;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+        }
+
+        .intro h1 {
+            font-size: 36px;
+            margin-bottom: 12px;
+            color: #193b2c;
+        }
+
+        .intro p {
+            color: #78877f;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .portal-card {
+            background: white;
+            border: 1px solid #e4ece6;
+            border-radius: 15px;
+            padding: 30px 25px;
+            min-height: 290px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(20, 50, 35, 0.04);
+            transition: 0.2s ease;
+        }
+
+        .portal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(20, 50, 35, 0.09);
+            border-color: #a9d4b8;
+        }
+
+        .portal-icon {
+            height: 58px;
+            width: 58px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            font-size: 28px;
+            margin-bottom: 22px;
+        }
+
+        .admin-icon {
+            background: #e6f3e9;
+        }
+
+        .driver-icon {
+            background: #e7f0fb;
+        }
+
+        .citizen-icon {
+            background: #fff2df;
+        }
+
+        .portal-card h2 {
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .portal-card p {
+            color: #7b8981;
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 22px;
+        }
+
+        .portal-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .portal-features li {
+            color: #52675b;
+            font-size: 12px;
+            margin-bottom: 9px;
+        }
+
+        .portal-features li::before {
+            content: "✓";
+            color: #21804e;
+            font-weight: bold;
+            margin-right: 9px;
+        }
+
+        .portal-button {
+            display: block;
+            margin-top: auto;
+            text-align: center;
+            background: #176747;
+            color: white;
+            padding: 13px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .portal-button:hover {
+            background: #104d36;
+        }
+
+        .notice {
+            margin: 30px auto 0;
+            padding: 17px 20px;
+            max-width: 760px;
+            border: 1px solid #dcebe1;
+            background: #eaf4ed;
+            color: #547161;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        footer {
+            text-align: center;
+            padding: 22px;
+            color: #98a69d;
+            font-size: 11px;
+        }
+
+        @media (max-width: 800px) {
+            .portal-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .main {
+                margin: 40px auto;
+            }
+
+            .intro h1 {
+                font-size: 28px;
+            }
+
+            .portal-card {
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="brand">
+            <div class="brand-icon">♻</div>
+            <div>
+                <h2>SmartWaste</h2>
+                <p>MANAGEMENT SYSTEM</p>
+            </div>
+        </div>
+
+        <span class="navbar-label">Welcome to SmartWaste</span>
+    </header>
+
+    <main class="main">
+
+        <section class="intro">
+            <div class="eyebrow">SMART WASTE MANAGEMENT</div>
+            <h1>Select Your Portal</h1>
+            <p>
+                Choose your role to access the SmartWaste Management System.
+                <br>
+                Each portal provides services according to your responsibilities.
+            </p>
+        </section>
+
+        <section class="portal-grid">
+
+            <!-- ADMIN -->
+            <article class="portal-card">
+                <div class="portal-icon admin-icon">🛡️</div>
+
+                <h2>Admin Portal</h2>
+
+                <p>
+                    Manage the complete waste collection system,
+                    monitor operations and manage users.
+                </p>
+
+                <ul class="portal-features">
+                    <li>Manage bins and trucks</li>
+                    <li>Manage drivers</li>
+                    <li>Review driver registration requests</li>
+                    <li>Monitor complaints and reports</li>
+                </ul>
+
+                <a href="login.html?role=admin" class="portal-button">
+                    Admin Login →
+                </a>
+            </article>
+
+            <!-- DRIVER -->
+            <article class="portal-card">
+                <div class="portal-icon driver-icon">🚛</div>
+
+                <h2>Driver Portal</h2>
+
+                <p>
+                    Access your assigned truck, collection tasks
+                    and garbage collection information.
+                </p>
+
+                <ul class="portal-features">
+                    <li>View assigned collections</li>
+                    <li>Check truck capacity</li>
+                    <li>Manage collection tasks</li>
+                    <li>Apply for a driver account</li>
+                </ul>
+
+                <a href="login.html?role=driver" class="portal-button">
+                    Driver Login →
+                </a>
+            </article>
+
+            <!-- CITIZEN -->
+            <article class="portal-card">
+                <div class="portal-icon citizen-icon">👥</div>
+
+                <h2>Citizen Portal</h2>
+
+                <p>
+                    Report waste-related problems and keep track
+                    of complaints submitted in your area.
+                </p>
+
+                <ul class="portal-features">
+                    <li>Submit waste complaints</li>
+                    <li>Track complaint status</li>
+                    <li>Report overflowing bins</li>
+                    <li>Create a citizen account</li>
+                </ul>
+
+                <a href="login.html?role=citizen" class="portal-button">
+                    Citizen Login →
+                </a>
+            </article>
+
+        </section>
+
+        <div class="notice">
+            <strong>Account access information</strong><br>
+            Citizen accounts can be registered directly. Driver accounts
+            require Admin approval. Admin accounts are managed privately
+            and cannot be created through public registration.
+        </div>
+
+    </main>
+
+    <footer>
+        © 2026 SmartWaste Management System · All Rights Reserved
+    </footer>
+
+</body>
+</html>

@@ -1,11 +1,8 @@
 #include <iostream>
-#include <vector>
 
-#include "Bin.h"
-#include "Truck.h"
-#include "Driver.h"
-#include "Depot.h"
+#include "Database.h"
 #include "CollectionManager.h"
+#include "Depot.h"
 
 extern "C"
 {
@@ -20,6 +17,12 @@ int main()
     cout << "       SMARTWASTE MANAGEMENT\n";
     cout << "====================================\n";
 
+    // Connect to SQLite
+    Database database;
+
+    if (!database.connect("database/smartwaste.db"))
+        return 1;
+
     // Create road network
     Graph graph;
 
@@ -31,52 +34,22 @@ int main()
     addEdge(&graph, 1, 3, 3);
     addEdge(&graph, 2, 3, 1);
 
-    // Create collection manager
-    CollectionManager manager(&graph);
+    // Connect database and road network
+    CollectionManager manager(&graph, &database);
 
-    // Create bins
-    manager.addBin(
-        Bin("B101", "Sector 1", 0, 200, 45, "Dry")
-    );
+    // Load bins and trucks from SQLite
+    if (!manager.loadData())
+    {
+        freeGraph(&graph);
+        return 1;
+    }
 
-    manager.addBin(
-        Bin("B102", "Sector 2", 1, 300, 95, "Wet")
-    );
+    // Display database records
+    manager.displayBins();
+    manager.displayTrucks();
+    manager.displayDriverDetails(101);
 
-    manager.addBin(
-        Bin("B103", "Sector 3", 2, 250, 80, "Dry")
-    );
-
-    manager.addBin(
-        Bin("B104", "Sector 4", 3, 200, 30, "Wet")
-    );
-
-    manager.addBin(
-        Bin("B105", "Sector 5", 3, 300, 99, "Mixed")
-    );
-
-    // Create trucks
-    manager.addTruck(
-        Truck("T01", 500, 100, 0)
-    );
-
-    manager.addTruck(
-        Truck("T02", 800, 200, 2)
-    );
-
-    manager.addTruck(
-        Truck("T03", 250, 50, 1)
-    );
-
-    // Create driver
-    Driver driver1(
-        101,
-        "Aryan",
-        "9876543210",
-        "T02"
-    );
-
-    // Create depots
+    // Add depot information
     manager.addDepot(
         Depot("D01", "Main Depot", 0)
     );
@@ -85,25 +58,23 @@ int main()
         Depot("D02", "Central Depot", 2)
     );
 
-    // Display information
-    manager.displayBins();
-    manager.displayTrucks();
-    driver1.displayDriver();
     manager.displayDepots();
 
-    // Run collection optimization
+    // Run priority and route optimization
     manager.optimizeCollection();
 
-    // Demonstrate collection completion
-    manager.completeCollection("B105");
+    // Demonstrate completed collection
+     //  manager.completeCollection("B104");
 
-    // Display updated information
+    // Show updated application status
     cout << "\n--- UPDATED SYSTEM STATUS ---\n";
 
     manager.displayBins();
     manager.displayTrucks();
 
+    // Clean up
     freeGraph(&graph);
+    database.close();
 
     return 0;
 }

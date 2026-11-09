@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizen Dashboard | SmartWaste</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script src="profile.js"></script>
+<body>
+
+    <div class="app">
+
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">♻</div>
+                <div>
+                    <h2>SmartWaste</h2>
+                    <span>CITIZEN PORTAL</span>
+                </div>
+            </div>
+
+            <div class="nav-heading">CITIZEN WORKSPACE</div>
+
+            <nav class="navigation">
+                <a href="index.html" class="nav-link active">
+                    <span>▦</span> Dashboard
+                </a>
+                <a href="complaint.html" class="nav-link">
+                    <span>♧</span> Submit Complaint
+                </a>
+                <a href="status.html" class="nav-link">
+                    <span>▤</span> Complaint Status
+                </a>
+            </nav>
+
+           <div class="sidebar-bottom">
+    <div class="admin-avatar" id="citizenInitial">C</div>
+    <div>
+        <strong id="citizenDisplayName">Citizen</strong>
+        <small id="citizenDisplayRole">Community Member</small>
+    </div>
+</div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <div class="breadcrumb">Citizen Workspace / Overview</div>
+                    <h1>Citizen Dashboard</h1>
+                    <p class="page-description">
+                        Monitor your complaints and help keep your neighbourhood clean.
+                    </p>
+                </div>
+
+                <div class="topbar-right">
+                    <div class="online-status">
+                        <span></span> System Online
+                    </div>
+                    <div class="profile-circle" id="profileCircle">T</div>
+                </div>
+            </header>
+
+            <section class="welcome-banner">
+                <div>
+                    <div class="welcome-label">SMART COMMUNITY SERVICES</div>
+                    <h2>Welcome to SmartWaste!</h2>
+                    <p>Report waste problems and contribute to a cleaner city.</p>
+                </div>
+                <div class="welcome-icon">♻</div>
+            </section>
+
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>My Complaints</span>
+                        <div class="stat-icon green">▤</div>
+                    </div>
+                    <h2 id="totalComplaints">0</h2>
+                    <small>Total complaints submitted</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Pending Complaints</span>
+                        <div class="stat-icon orange">◷</div>
+                    </div>
+                    <h2 id="pendingComplaints">0</h2>
+                    <small>Awaiting action</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Resolved Complaints</span>
+                        <div class="stat-icon blue">✓</div>
+                    </div>
+                    <h2 id="resolvedComplaints">0</h2>
+                    <small>Successfully addressed</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Community Contribution</span>
+                        <div class="stat-icon green">♧</div>
+                    </div>
+                    <h2>Active</h2>
+                    <small>Helping improve waste management</small>
+                </div>
+
+            </section>
+
+            <section class="dashboard-grid">
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h3>Community Overview</h3>
+                            <p>How your reports support cleaner neighbourhoods</p>
+                        </div>
+                        <a href="status.html">View complaints →</a>
+                    </div>
+
+                    <div class="overview-content">
+                        <div class="overview-number">
+                            <strong>01</strong>
+                            <span>Report a Waste Issue</span>
+                            <small>Submit details about overflowing bins or collection problems.</small>
+                        </div>
+
+                        <div class="overview-number">
+                            <strong>02</strong>
+                            <span>Track Your Complaint</span>
+                            <small>Check whether your submitted complaint is pending or resolved.</small>
+                        </div>
+                    </div>
+
+                    <p class="panel-note">
+                        Your participation helps the municipal team identify waste collection issues.
+                    </p>
+                </div>
+
+                <div class="panel quick-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h3>Quick Actions</h3>
+                            <p>Access citizen services</p>
+                        </div>
+                    </div>
+
+                    <a href="complaint.html" class="quick-action">
+                        <div class="action-icon">✎</div>
+                        <div>
+                            <strong>Submit a Complaint</strong>
+                            <small>Report a waste-related problem</small>
+                        </div>
+                        <span class="arrow">→</span>
+                    </a>
+
+                    <a href="status.html" class="quick-action">
+                        <div class="action-icon">▤</div>
+                        <div>
+                            <strong>Track Complaint Status</strong>
+                            <small>View the progress of your reports</small>
+                        </div>
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
+
+            </section>
+
+            <section class="panel activity-panel">
+                <div class="panel-heading">
+                    <div>
+                        <h3>Getting Started</h3>
+                        <p>A few simple steps to use the Citizen Portal</p>
+                    </div>
+                </div>
+
+                <div class="empty-state">
+                    Submit a complaint to report a waste collection issue in your area.
+                    You can then use Complaint Status to check its progress.
+                </div>
+            </section>
+
+            <div id="citizenMessage" class="message"></div>
+
+            <footer>
+                <span>SmartWaste Community Portal</span>
+                <span>Citizen Services</span>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

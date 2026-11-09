@@ -5,3 +5,29 @@ dijkstra_test
 database_test
 smartwaste
 database/*.db
+
+# Local editor settings
+.vscode/
+
+# Compiled executables
+smartwaste_api
+create_admin
+*.out
+
+# Local environment and secrets
+.env
+.env.*
+
+# macOS files
+.DS_Store
+
+# SQLite temporary files
+*.db-journal
+
+# SQLite database sidecar files
+database/*.db-shm
+database/*.db-wal
+
+# Additional local build outputs
+/backend/smartwaste_api
+/backend/create_admin

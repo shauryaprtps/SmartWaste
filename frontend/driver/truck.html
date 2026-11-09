@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Truck | SmartWaste</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<aside class="sidebar">
+    <div class="brand">
+        <div class="brand-icon">♻</div>
+        <div>
+            <h2>SmartWaste</h2>
+            <span>DRIVER PORTAL</span>
+        </div>
+    </div>
+
+    <div class="nav-heading">DRIVER WORKSPACE</div>
+
+    <nav class="navigation">
+        <a href="index.html" class="nav-link">Dashboard</a>
+        <a href="assignment.html" class="nav-link">My Assignment</a>
+        <a href="truck.html" class="nav-link active">My Truck</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+        <div class="driver-avatar">D</div>
+        <div>
+            <strong>Driver</strong>
+            <small>Collection Operator</small>
+        </div>
+    </div>
+</aside>
+
+<main class="main-content">
+
+    <header class="topbar">
+        <div>
+            <h1>My Truck</h1>
+            <p class="page-description">View your assigned truck details</p>
+        </div>
+        <button class="secondary-btn" onclick="refreshTruck()">
+            Refresh Data
+        </button>
+    </header>
+
+    <section class="welcome-banner">
+        <div>
+            <h2>Truck Overview</h2>
+            <p>Monitor your truck capacity and collection status.</p>
+        </div>
+    </section>
+
+    <div id="truckMessage"></div>
+
+    <section class="stats-grid">
+        <div class="stat-card">
+            <span>Truck ID</span>
+            <h2 id="truckId">--</h2>
+        </div>
+
+        <div class="stat-card">
+            <span>Maximum Capacity</span>
+            <h2 id="truckCapacity">--</h2>
+        </div>
+
+        <div class="stat-card">
+            <span>Current Load</span>
+            <h2 id="truckLoad">--</h2>
+        </div>
+
+        <div class="stat-card">
+            <span>Remaining Capacity</span>
+            <h2 id="truckRemaining">--</h2>
+        </div>
+    </section>
+
+    <section class="panel">
+        <div class="panel-heading">
+            <h3>Truck Load Status</h3>
+            <strong id="truckStatus">Loading...</strong>
+        </div>
+
+        <div class="progress-heading">
+            <span>Capacity Utilization</span>
+            <strong id="truckPercentage">0%</strong>
+        </div>
+
+        <div class="progress-track">
+            <div class="progress-fill" id="truckProgress"></div>
+        </div>
+
+        <p class="panel-note" id="capacityMessage">
+            Loading truck information...
+        </p>
+    </section>
+
+    <section class="panel">
+        <div class="panel-heading">
+            <h3>Truck Information</h3>
+        </div>
+
+        <div class="profile-grid">
+            <div>
+                <span>Assigned Driver</span>
+                <strong id="assignedDriver">--</strong>
+            </div>
+
+            <div>
+                <span>Current Location Node</span>
+                <strong id="truckLocation">--</strong>
+            </div>
+
+            <div>
+                <span>Truck Status</span>
+                <strong id="truckStatusDetails">--</strong>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <div class="panel-heading">
+            <h3>Depot Alert</h3>
+        </div>
+
+        <div id="depotAlert" class="empty-state">
+            Checking truck capacity...
+        </div>
+    </section>
+
+</main>
+
+<script src="truck.js"></script>
+</body>
+</html>

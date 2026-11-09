@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartWaste | My Assignment</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="driver-app">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">♻</div>
+            <div>
+                <h2>SmartWaste</h2>
+                <span>DRIVER PORTAL</span>
+            </div>
+        </div>
+
+        <p class="nav-heading">DRIVER WORKSPACE</p>
+
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">Dashboard</a>
+            <a href="assignment.html" class="nav-link active">My Assignment</a>
+            <a href="truck.html" class="nav-link">My Truck</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="driver-avatar" id="driverAvatar">D</div>
+            <div>
+                <strong id="sidebarDriverName">Driver</strong>
+                <small>Collection Operator</small>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="breadcrumb">Driver Workspace / My Assignment</p>
+                <h1>My Assignment</h1>
+                <p class="page-description">
+                    View your assigned garbage bins and collection tasks.
+                </p>
+            </div>
+
+            <div class="online-status">
+                <span></span>
+                System Online
+            </div>
+        </header>
+
+
+        <section class="welcome-banner">
+            <div>
+                <p class="welcome-label">COLLECTION WORKSPACE</p>
+
+                <h2>Your Collection Assignment</h2>
+
+                <p>
+                    Check assigned bin details and collection information.
+                </p>
+            </div>
+
+            <div class="welcome-icon">📋</div>
+        </section>
+
+
+        <section class="stats-grid">
+
+            <article class="stat-card">
+                <span>Assigned Bin</span>
+                <h2 id="assignedBinStat">--</h2>
+                <small>Current bin ID</small>
+            </article>
+
+            <article class="stat-card">
+                <span>Bin Fill Level</span>
+                <h2 id="binFillStat">--</h2>
+                <small>Current recorded fill</small>
+            </article>
+
+            <article class="stat-card">
+                <span>Garbage Type</span>
+                <h2 id="garbageTypeStat">--</h2>
+                <small>Waste classification</small>
+            </article>
+
+            <article class="stat-card">
+                <span>Assigned Truck</span>
+                <h2 id="assignedTruckStat">--</h2>
+                <small>Your registered vehicle</small>
+            </article>
+
+        </section>
+
+
+        <section class="panel">
+
+            <div class="panel-heading">
+                <div>
+                    <h3>Current Collection Task</h3>
+                    <p>Details of the bin assigned to your truck.</p>
+                </div>
+
+                <button class="secondary-btn"
+                        onclick="refreshAssignment()">
+                    ↻ Refresh
+                </button>
+            </div>
+
+            <div id="assignmentContent">
+
+                <div class="loading-state">
+                    Assignment details will appear here.
+                </div>
+
+            </div>
+
+            <div id="assignmentMessage" class="alert success" hidden></div>
+
+        </section>
+
+
+        <section class="panel">
+
+            <div class="panel-heading">
+                <div>
+                    <h3>Collection Instructions</h3>
+                    <p>Important information for the driver.</p>
+                </div>
+            </div>
+
+            <div class="assignment-details">
+
+                <div>
+                    <span>Step 1</span>
+                    <strong>Check Bin ID</strong>
+                </div>
+
+                <div>
+                    <span>Step 2</span>
+                    <strong>Verify Location</strong>
+                </div>
+
+                <div>
+                    <span>Step 3</span>
+                    <strong>Collect Garbage</strong>
+                </div>
+
+                <div>
+                    <span>Step 4</span>
+                    <strong>Update Collection</strong>
+                </div>
+
+            </div>
+
+            <p class="panel-note">
+                Collection completion will be enabled after the
+                backend transaction is connected and verified.
+            </p>
+
+            <button class="primary-btn" disabled>
+                Mark Collection Complete
+            </button>
+
+        </section>
+
+
+        <footer>
+            <span>SmartWaste Management System</span>
+            <span>Driver Collection Workspace</span>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="assignment.js"></script>
+
+</body>
+</html>

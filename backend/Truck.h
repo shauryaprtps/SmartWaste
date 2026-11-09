@@ -16,51 +16,24 @@ private:
     string assignedBinID;
 
 public:
-    Truck(string id, float capacity,
-          float load, int location)
+    Truck(string id, float capacity, float load,
+          int location, string truckStatus = "Available")
     {
         truckID = id;
         maxCapacity = capacity;
         currentLoad = load;
         currentLocation = location;
-        status = "Available";
+        status = truckStatus;
         assignedBinID = "";
     }
 
-    string getID()
-    {
-        return truckID;
-    }
-
-    float getRemainingCapacity()
-    {
-        return maxCapacity - currentLoad;
-    }
-
-    float getCurrentLoad()
-    {
-        return currentLoad;
-    }
-
-    float getMaxCapacity()
-    {
-        return maxCapacity;
-    }
-
-    int getCurrentLocation()
-    {
-        return currentLocation;
-    }
-
-    string getStatus()
-    {
-        return status;
-    }
-
-    string getAssignedBinID()
-    {
-        return assignedBinID;
-    }
+    string getID() { return truckID; }
+    float getRemainingCapacity() { return maxCapacity - currentLoad; }
+    float getCurrentLoad() { return currentLoad; }
+    float getMaxCapacity() { return maxCapacity; }
+    int getCurrentLocation() { return currentLocation; }
+    string getStatus() { return status; }
+    string getAssignedBinID() { return assignedBinID; }
 
     bool canCollect(float garbage)
     {
@@ -71,38 +44,32 @@ public:
     bool assignBin(string binID, float garbage)
     {
         if (status != "Available" || !canCollect(garbage))
-        {
             return false;
-        }
 
         assignedBinID = binID;
         status = "Assigned";
-
         return true;
     }
+    void restoreAssignment(string binID)
+{
+    assignedBinID = binID;
+    status = "Assigned";
+}
 
-    bool completeCollection(string binID,
-                            float garbage,
+    bool completeCollection(string binID, float garbage,
                             int binLocation)
     {
-        if (assignedBinID != binID ||
-            !canCollect(garbage))
-        {
+        if (assignedBinID != binID || !canCollect(garbage))
             return false;
-        }
 
         currentLoad += garbage;
         currentLocation = binLocation;
         assignedBinID = "";
 
         if (currentLoad >= maxCapacity * 0.90f)
-        {
             status = "NeedsDepot";
-        }
         else
-        {
             status = "Available";
-        }
 
         return true;
     }
@@ -110,8 +77,8 @@ public:
     void unloadGarbage()
     {
         currentLoad = 0;
-        status = "Available";
         assignedBinID = "";
+        status = "Available";
     }
 
     void setLocation(int location)
@@ -124,10 +91,8 @@ public:
         cout << truckID
              << " | Load: " << currentLoad
              << "/" << maxCapacity
-             << " kg | Remaining: "
-             << getRemainingCapacity()
-             << " kg | Status: "
-             << status << endl;
+             << " kg | Remaining: " << getRemainingCapacity()
+             << " kg | Status: " << status << endl;
     }
 };
 

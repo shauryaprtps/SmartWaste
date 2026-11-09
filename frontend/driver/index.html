@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Driver Portal | SmartWaste</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="driver-app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">♻</div>
+
+                <div>
+                    <h2>SmartWaste</h2>
+                    <span>DRIVER PORTAL</span>
+                </div>
+            </div>
+
+            <p class="nav-heading">DRIVER WORKSPACE</p>
+
+            <nav class="navigation">
+    <a href="index.html" class="nav-link active">
+        Dashboard
+    </a>
+
+    <a href="assignment.html" class="nav-link">
+        My Assignment
+    </a>
+
+    <a href="truck.html" class="nav-link">
+        My Truck
+    </a>
+</nav>
+
+            <div class="sidebar-bottom">
+                <div class="driver-avatar">D</div>
+
+                <div>
+                    <strong id="sidebarDriverName">Driver</strong>
+                    <small>Collection Operator</small>
+                </div>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div>
+                    <p class="breadcrumb">
+                        Driver Workspace / Dashboard
+                    </p>
+
+                    <h1>Driver Dashboard</h1>
+
+                    <p class="page-description">
+                        Manage your truck and garbage collection tasks.
+                    </p>
+                </div>
+
+                <span class="online-status">
+                    <span></span> System Online
+                </span>
+
+            </header>
+
+
+            <!-- DRIVER ID LOGIN -->
+            <section class="welcome-banner">
+
+                <div>
+                    <p class="welcome-label">DRIVER ACCESS</p>
+
+                    <h2>Welcome to SmartWaste</h2>
+
+                    <p>
+                        Enter your registered Driver ID to access
+                        your truck information and assignments.
+                    </p>
+                </div>
+
+                <div class="welcome-icon">🚛</div>
+
+            </section>
+
+
+            <section class="panel login-panel">
+
+                <div class="panel-heading">
+                    <div>
+                        <h3>Driver Identification</h3>
+
+                        <p>
+                            Use your registered driver ID.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="login-form">
+
+                    <input
+                        type="text"
+                        id="driverIdInput"
+                        placeholder="Example: D101"
+                    >
+
+                    <button
+                        type="button"
+                        class="primary-btn"
+                        id="lookupDriverBtn"
+                    >
+                        Access Dashboard
+                    </button>
+
+                </div>
+
+                <p id="driverMessage" class="message"></p>
+
+            </section>
+
+
+            <!-- DRIVER DASHBOARD -->
+            <div id="driverWorkspace" hidden>
+
+                <!-- DRIVER PROFILE -->
+                <section class="panel profile-panel">
+
+                    <div class="panel-heading">
+                        <div>
+                            <h3>Driver Information</h3>
+
+                            <p>
+                                Your registered profile details.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="profile-grid">
+
+                        <div>
+                            <span>Driver ID</span>
+                            <strong id="driverId">--</strong>
+                        </div>
+
+                        <div>
+                            <span>Driver Name</span>
+                            <strong id="driverName">--</strong>
+                        </div>
+
+                        <div>
+                            <span>Phone Number</span>
+                            <strong id="driverPhone">--</strong>
+                        </div>
+
+                        <div>
+                            <span>Assigned Truck</span>
+                            <strong id="truckId">--</strong>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- TRUCK STATISTICS -->
+                <section class="stats-grid">
+
+                    <div class="stat-card">
+                        <span>Truck Capacity</span>
+                        <h2 id="truckCapacity">--</h2>
+                        <small>Maximum capacity</small>
+                    </div>
+
+                    <div class="stat-card">
+                        <span>Current Load</span>
+                        <h2 id="truckLoad">--</h2>
+                        <small>Garbage currently loaded</small>
+                    </div>
+
+                    <div class="stat-card">
+                        <span>Remaining Capacity</span>
+                        <h2 id="truckRemaining">--</h2>
+                        <small>Available space</small>
+                    </div>
+
+                    <div class="stat-card">
+                        <span>Truck Status</span>
+                        <h2 id="truckStatus">--</h2>
+                        <small>Current operating status</small>
+                    </div>
+
+                </section>
+
+
+                <!-- TRUCK UTILIZATION -->
+                <section class="panel" id="truck">
+
+                    <div class="panel-heading">
+                        <div>
+                            <h3>Truck Capacity Overview</h3>
+
+                            <p>
+                                Monitor your current truck load.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="progress-heading">
+                        <span>Capacity Utilization</span>
+                        <strong id="truckUtilization">0%</strong>
+                    </div>
+
+                    <div class="progress-track">
+                        <div
+                            class="progress-fill"
+                            id="truckProgress"
+                        ></div>
+                    </div>
+
+                    <p id="truckAlert" class="panel-note">
+                        Truck capacity information will appear here.
+                    </p>
+
+                </section>
+
+
+                <!-- ASSIGNED COLLECTION -->
+                <section class="panel" id="assignment">
+
+                    <div class="panel-heading">
+                        <div>
+                            <h3>My Collection Assignment</h3>
+
+                            <p>
+                                Collection task assigned to your truck.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="assignment-details">
+
+                        <div>
+                            <span>Assigned Bin</span>
+                            <strong id="assignedBin">--</strong>
+                        </div>
+
+                        <div>
+                            <span>Bin Location</span>
+                            <strong id="binLocation">--</strong>
+                        </div>
+
+                        <div>
+                            <span>Bin Fill Level</span>
+                            <strong id="binFill">--</strong>
+                        </div>
+
+                        <div>
+                            <span>Garbage Type</span>
+                            <strong id="binGarbage">--</strong>
+                        </div>
+
+                    </div>
+
+                    <p id="assignmentMessage" class="panel-note">
+                        Assignment information will appear here.
+                    </p>
+
+                </section>
+
+            </div>
+
+
+            <footer>
+                <span>SmartWaste Management System</span>
+                <span>Driver Control Center</span>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
